@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>For My Love 🌷 | 5th Monthsarry</title>
     
-    <!-- GOOGLE FONTS - Beautiful fonts added! -->
+    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -22,7 +22,6 @@
             color: #2e0a12;
         }
 
-        /* SIDEBAR MENU (vertical on the left) */
         .sidebar {
             position: fixed;
             left: 0;
@@ -41,7 +40,6 @@
             overflow-y: auto;
         }
 
-        /* Tulip images in sidebar */
         .sidebar-tulip {
             width: 80px;
             height: auto;
@@ -53,14 +51,6 @@
 
         .sidebar-tulip:hover {
             transform: scale(1.05) rotate(5deg);
-        }
-
-        .sidebar-tulip-top {
-            margin-bottom: 0.5rem;
-        }
-
-        .sidebar-tulip-bottom {
-            margin-top: 0.5rem;
         }
 
         .menu-btn {
@@ -88,31 +78,26 @@
             color: white;
         }
 
-        /* Music player in sidebar */
         .music-player {
-            margin-top: auto;
             background: rgba(62, 0, 8, 0.8);
             border-radius: 1.5rem;
-            padding: 1rem;
+            padding: 0.8rem;
             text-align: center;
             color: #ffddcc;
             width: 100%;
         }
 
-        .music-player audio {
-            width: 100%;
-            border-radius: 30px;
-            margin-top: 8px;
-        }
-
         .music-label {
             font-family: 'Dancing Script', cursive;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
             color: #ffb347;
         }
 
-        /* Main content */
+        .music-player iframe {
+            border-radius: 12px;
+        }
+
         .main-content {
             margin-left: 280px;
             padding: 2rem 2rem 3rem;
@@ -158,7 +143,6 @@
             gap: 12px;
         }
 
-        /* Home page */
         .hero-greeting {
             text-align: center;
             background: linear-gradient(135deg, #fff0e6, #ffe4d4);
@@ -204,7 +188,6 @@
             transform: scale(1.02);
         }
 
-        /* Memories grid */
         .memories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -239,7 +222,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Comment section */
         .comment-section {
             background: #fff5ef;
             border-radius: 2rem;
@@ -302,7 +284,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Quiz & letter */
         .quiz-area {
             background: #ffede3;
             border-radius: 2rem;
@@ -440,23 +421,24 @@
 </head>
 <body>
 
-<!-- SIDEBAR MENU with tulip images -->
+<!-- SIDEBAR MENU with NEW tulip image -->
 <div class="sidebar">
-    <!-- Top tulip image -->
-    <img class="sidebar-tulip sidebar-tulip-top" src="https://imgs.search.brave.com/jqtj7y8VLo26c6HZLdUxTXUXFvqE00-MwRkyXZEGASA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/Ym5haWwuaW1nYmlu/LmNvbS8xMi8xNy8y/MC90dWxpcC1mbG93/ZXItY2FydG9vbi1w/aW5rLXR1bGlwLWZs/b3dlcnMtd2l0aC1n/cmVlbi1sZWF2ZXMt/emc2VnNCeVpfdC5q/cGc" alt="Tulip flower">
+    <!-- Top tulip image - REPLACED WITH NEW ONE -->
+    <img class="sidebar-tulip sidebar-tulip-top" src="https://imgs.search.brave.com/R5PL_drgqfkHBCLpbEwLy4VNPdnwtbwZHA7aQOlSQk4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2VlL2Fl/L2M5L2VlYWVjOTMy/Y2Y3NjA1NGFjODc5/YTQ2MzQ1YTgwMWYz/LmpwZw" alt="Tulip flower">
     
     <button class="menu-btn" data-section="home">🌹 <span>Home</span></button>
     <button class="menu-btn" data-section="memories">📸 <span>Memories</span></button>
     <button class="menu-btn" data-section="game">🎮 <span>Mini Game</span></button>
     <button class="menu-btn" data-section="letter">💌 <span>Love Letter</span></button>
     
-    <!-- Music Player -->
     <div class="music-player">
-        <div class="music-label">🎵 Our Song 🎵</div>
-        <audio id="bgMusic" loop controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-            Your browser does not support audio.
-        </audio>
+        <div class="music-label">🎵 Papahiram - Moira ft. Johnoy 🎵</div>
+        <iframe width="100%" height="65" src="https://www.youtube.com/embed/bxfCwyiKpDg?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 15px;"></iframe>
+    </div>
+
+    <div class="music-player" style="margin-top: 5px;">
+        <div class="music-label">🎵 Padaba Taka - dwta 🎵</div>
+        <iframe width="100%" height="65" src="https://www.youtube.com/embed/4KXI9yYKex0?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 15px;"></iframe>
     </div>
     
     <!-- Bottom tulip image -->
@@ -465,7 +447,6 @@
 
 <!-- MAIN CONTENT -->
 <div class="main-content">
-    <!-- HOME SECTION -->
     <div id="home-section" class="section">
         <div class="hero-greeting">
             <h1>HELLOOO MYYY LOVEYYY 🌷</h1>
@@ -474,20 +455,17 @@
             <p style="margin-top: 1rem; font-family: 'Dancing Script', cursive; font-size: 1.3rem;">✨ THIS WHOLE SITE IS FOR YOU:3 ✨</p>
         </div>
         
-        <!-- Insert 2+ pictures of her here - REPLACE THESE WITH YOUR PHOTO LINKS -->
         <div class="photo-pair">
-            <img src="https://placehold.co/400x400/FFB6C1/FFFFFF?text=Your+Photo+1" alt="My Love 1">
-            <img src="https://placehold.co/400x400/FFC0CB/FFFFFF?text=Your+Photo+2" alt="My Love 2">
+            <img src="https://raw.githubusercontent.com/Kezesss010626/formybabyyy-3/main/Messenger_creation_C7D2D98E-6C9A-4831-B268-32D676985D2E.jpg" alt="My Love 1">
+            <img src="https://raw.githubusercontent.com/Kezesss010626/formybabyyy-3/main/Messenger_creation_FEBF3C51-2074-4853-8C2D-D4F8EF535600.jpg" alt="My Love 2">
         </div>
         <div style="text-align: center; font-size: 2rem;">🌷❤️🌷</div>
     </div>
 
-    <!-- MEMORIES SECTION (20 items + comment box) -->
     <div id="memories-section" class="section hidden-section">
-        <h2>📸 Our 20 Sweet Memories <span>🌷</span></h2>
+        <h2>📸 Our Sweet Memories <span>🌷</span></h2>
         <div class="memories-grid" id="memoriesGrid"></div>
 
-        <!-- COMMENT SECTION -->
         <div class="comment-section">
             <h3>💬 Leave a sweet message here:</h3>
             <div class="comment-box">
@@ -500,7 +478,6 @@
         </div>
     </div>
 
-    <!-- MINI GAME SECTION -->
     <div id="game-section" class="section hidden-section">
         <h2>🎮 Mini Game: Know My Baby? 🌷</h2>
         <div class="quiz-area">
@@ -524,7 +501,6 @@
         </div>
     </div>
 
-    <!-- LOVE LETTER SECTION -->
     <div id="letter-section" class="section hidden-section">
         <h2>💌 Sealed With Love <span>🌷</span></h2>
         <div class="letter-container">
@@ -536,7 +512,6 @@
     <footer>🌷 Made with all my love for you 🌷</footer>
 </div>
 
-<!-- MODAL FOR LETTER -->
 <div id="letterModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
@@ -547,19 +522,36 @@
 </div>
 
 <script>
-    // ---------- Generate 20 memories ----------
+    const photoLinks = [
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_850.png?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_2026-05-03-10-39-13-641_com.roblox.client.jpg?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_2026-04-03-16-33-04-156_com.discord.jpg?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_2026-03-15-16-11-45-125_com.roblox.client.jpg?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_2026-03-15-15-00-06-039_com.roblox.client.jpg?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_1047.png?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_1032.png?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Screenshot_1031.png?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/Messenger_creation_D69FA94D-EC28-40FF-B105-05B96E82B337.jpg?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/IMG_20260330_083457.png?raw=true",
+        "https://github.com/Kezesss010626/formybabyyy-3/blob/main/IMG_20260306_212533.jpg?raw=true"
+    ];
+
+    const captions = [
+        "💖 Our special moment #1", "🎮 Roblox adventures #2", "💬 Discord memories #3",
+        "✨ Roblox fun #4", "🌟 Gaming together #5", "📸 Cute screenshot #6",
+        "💕 Love this #7", "🌷 Tulips & you #8", "💌 Messenger creation #9",
+        "🌸 Beautiful memory #10", "🎉 Happy times #11"
+    ];
+
     const memoriesGrid = document.getElementById('memoriesGrid');
-    for (let i = 1; i <= 20; i++) {
+    memoriesGrid.innerHTML = '';
+    for (let i = 0; i < photoLinks.length; i++) {
         const memoryDiv = document.createElement('div');
         memoryDiv.className = 'memory-item';
-        memoryDiv.innerHTML = `
-            <img src="https://placehold.co/400x400/FFB7B2/FFFFFF?text=Memory+${i}" alt="Memory ${i}">
-            <div class="caption">💖 Our special moment #${i} 💖</div>
-        `;
+        memoryDiv.innerHTML = `<img src="${photoLinks[i]}" alt="Memory ${i+1}"><div class="caption">${captions[i]}</div>`;
         memoriesGrid.appendChild(memoryDiv);
     }
 
-    // ---------- COMMENT SYSTEM ----------
     const commentInput = document.getElementById('commentInput');
     const postBtn = document.getElementById('postCommentBtn');
     const commentsList = document.getElementById('commentsList');
@@ -577,7 +569,6 @@
     postBtn.addEventListener('click', () => addComment(commentInput.value));
     commentInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') addComment(commentInput.value); });
 
-    // ---------- QUIZ ----------
     const CORRECT_ANSWERS = { q1: "RED", q2: "JANUARY 6 2026", q3: "SALTY FOOD" };
     function normalizeAnswer(str) {
         let s = str.trim().toUpperCase().replace(/,/g, '').replace(/\s+/g, ' ');
@@ -607,7 +598,6 @@
     document.getElementById('checkQuizBtn').addEventListener('click', updateQuiz);
     [q1, q2, q3].forEach(i => i.addEventListener('input', updateQuiz));
 
-    // ---------- LETTER MODAL ----------
     const modal = document.getElementById('letterModal');
     const dynamicMsg = document.getElementById('dynamicLetterMessage');
     const secretMessage = `🌷 My baby, 🌷<br><br>Happy 5th Monthsarry! I love you more than tulips love the sun. You make my world bright and red like passion. Thank you for saying YES on January 6, 2026. Every day with you is a gift. 💕<br><br>I LOVE YOU SO MUCH BABYYY KOOO MWAMWA ❤️🌷<br><br>Yours forever,<br>[Your Name]`;
@@ -622,7 +612,6 @@
     document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
     window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
 
-    // ---------- MENU NAVIGATION ----------
     const sections = { home: 'home-section', memories: 'memories-section', game: 'game-section', letter: 'letter-section' };
     document.querySelectorAll('.menu-btn').forEach(btn => {
         btn.addEventListener('click', () => {
