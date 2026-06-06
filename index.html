@@ -179,8 +179,9 @@
             min-width: 200px;
             border-radius: 2rem;
             border: 4px solid #ffb485;
-            object-fit: cover;
-            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background: #fff0e6;
+            max-height: 300px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
@@ -211,8 +212,10 @@
 
         .memory-item img {
             width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            background: #fff0e6;
+            max-height: 250px;
         }
 
         .memory-item .caption {
@@ -312,6 +315,13 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        .quiz-feedback {
+            font-size: 0.85rem;
+            margin-top: 5px;
+            color: #c7364b;
+            font-weight: 500;
+        }
+
         .check-answers-btn {
             background: #b11f3a;
             color: white;
@@ -388,7 +398,7 @@
             font-size: 1rem;
             line-height: 1.6;
             text-align: left;
-            white-space: pre-wrap;
+            white-space: normal;
             color: #4a1f2c;
             background: #fff0e6;
             padding: 1rem;
@@ -570,10 +580,17 @@
     ];
 
     const captions = [
-        "💖 Our special moment #1", "🎮 Roblox adventures #2", "💬 Discord memories #3",
-        "✨ Roblox fun #4", "🌟 Gaming together #5", "📸 Cute screenshot #6",
-        "💕 Love this #7", "🌷 Tulips & you #8", "💌 Messenger creation #9",
-        "🌸 Beautiful memory #10", "🎉 Happy times #11"
+        "jurassic:3",
+        "demonology with u hehe",
+        "cyberpunk",
+        "poppyplaytimee",
+        "random games with u<3",
+        "random games with u<3",
+        "zoo thingy game",
+        "basta hide and see po to hehe",
+        "avatar hehe",
+        "hookeddd!",
+        "fnaf po ata to babyyy kooo"
     ];
 
     const memoriesGrid = document.getElementById('memoriesGrid');
@@ -631,11 +648,11 @@
         const c1 = a1 === CORRECT_ANSWERS.q1, c2 = a2 === CORRECT_ANSWERS.q2, c3 = a3 === CORRECT_ANSWERS.q3;
         const c4 = a4 === CORRECT_ANSWERS.q4, c5 = a5 === CORRECT_ANSWERS.q5;
         
-        q1fb.innerText = c1 ? "✅ Correct!" : (q1.value ? "❌ Try RED" : "");
-        q2fb.innerText = c2 ? "✅ Correct! January 6, 2026 ❤️" : (q2.value ? "❌ Try: January 6 2026" : "");
-        q3fb.innerText = c3 ? "✅ Correct! Salty food it is! 🧂" : (q3.value ? "❌ Baby prefers salty!" : "");
-        q4fb.innerText = c4 ? "✅ Correct! Tulips! 🌷" : (q4.value ? "❌ Her favorite is TULIPS 🌷" : "");
-        q5fb.innerText = c5 ? "✅ Correct! Matcha! 🍵" : (q5.value ? "❌ Her favorite is MATCHA" : "");
+        q1fb.innerText = c1 ? "Correct" : (q1.value ? "Wrong" : "");
+        q2fb.innerText = c2 ? "Correct" : (q2.value ? "Wrong" : "");
+        q3fb.innerText = c3 ? "Correct" : (q3.value ? "Wrong" : "");
+        q4fb.innerText = c4 ? "Correct" : (q4.value ? "Wrong" : "");
+        q5fb.innerText = c5 ? "Correct" : (q5.value ? "Wrong" : "");
         
         const allCorrect = c1 && c2 && c3 && c4 && c5;
         if (allCorrect && !quizUnlocked) {
@@ -657,39 +674,11 @@
 
     const modal = document.getElementById('letterModal');
     const dynamicMsg = document.getElementById('dynamicLetterMessage');
-    const secretMessage = `🌷 GOOD MORNING POOOO MYYY LOVEYYY AND HAPPYYYYY 5TH MONTHSARRYYY POOO BABYYYY KOOOO. 🌷
-
-MOREEE MONTHSSS AND YEARSS FOR USS TO CELEBRATE SOONNN. I'M SOOO HAPPYYYY TO POO TO REACHHH THE 5TH MONTHHH OF OURRR LOVEEE STORYYYY, 1 MOREEE MONTHH AND HALF A YEARRR NA TAYOOO BABYYY KOOOO.
-
-THANKK YOUUUUUUUU SOOOO SOOOOO MUCHHHH SA LAGINGGG PAG-INTINDIII SAKINNN BABYYY KOOO, IK IM NOT THE PERFECT BOYFRIEND BUT I'M DOING MY BESTTT TO BECOMEE ONEEE.
-
-SOBRANG NAAPPRECIATEEE KOOO POO YUNGG CHANCES AND TIWALA NA BINIBIGAYYY MOOO SAKINNN PARA MAGING BETTER VERSION AKOO NG SARILII KOOO BABYYY KOOOO.
-
-I'M SORRYYYY POOO IF THERE'S NOOO PHYSICAL GIFTSS FOR NOWWW, BABAWIII POO AKOOO PAG MAY ALLOWANCE NA ULITT AKOOO BABYYY KOOOO.
-
-LAHATTT POOO NG EFFORTS MOO NAKIKITAA KOOO YANNN BABYYY KOOO AND EVERY SINGLE ONEEE OF THEMM IS SUPERR APPRECIATED POOOO.
-
-I HOPEEEE NA HINDIII KA POO MAGSAWAA SA PAG-INTINDIII AT PAGTIWALA SAKINNN BABYYY KOOO, IKK SOMETIMESS NASASAKTAN KOOO POO IKAWW AND MAY MGA MALI AKONG NAGAGAWAA BUT I PROMISEEE POO THAT IT WAS NEVERR MY INTENTION TO HURT YOUUU BABYYY KOOO.
-
-FORR ALLL THE LAUGHTER AND SADNESS THAT WE WENT THROUGH I'M THANKFUL DAHILLL NAGING MATATAG IKAWWW BABYYY KOOOO, SANAA GANONN PA RINN POOO IN THE FUTUREEEE.
-
-KAHIT ANOOO PONGG OBSTACLE ANG HUMARANG AT PAGDAANAN NATINNN, AS LONG AS MAGKASAMAAAA TAYOOO I'M SUREEE NA MALALAGPASANN NATINN YANNN BABYYYY KOOOO.
-
-YOU'RE THEEE BEST THINGG THAT EVER HAPPENED TO MEEE AND YOU'RE AS IMPORTANT AS MY FAMILYYY POOO SA HEART KOOO BABYYY KOOOO.
-
-SOBRANGG MAHALLL NA MAHALLLLLL POOO KITAAA BABYYY KOOO AND I HOPE YOU KNOWW NA HINDING-HINDI AKOOO SUSUKO SAYOOOO, SANAA MAGTIWALA KA POOO SAKINNN.
-
-BEE MOREEE OPENNN DINN POOO SA BABYYY MOOOO, I PROMISEEEE NA MAS MAGIGING UNDERSTANDING AKOOO AND IINTINDIHINN KOO YUNG NARARAMDAMAN MOO POO BABYYY KOOOO.
-
-SOON POOO MAKAKAPUNTAA RINN AKOOO JANNN AND MAKAKASAMA NA KITAA BABYYY KOOOO, KONTING ANTAYY PA POOO AND MAKAKAPUNTA RINN JANN BABYYY MOOOO.
-
-HAPPYYYY 5TH MONTHSARRYYY POOO ULITTT BABYYY KOOOO, SANA MAG-ENJOYYY IKAWWWW TODAYYYY.
-
-I LOVEEEEEEEEEEEEEEEEE YOUUUUUUUUUUUUUUUUUUUUUUUUUUUUU SOOOOOO SOOOO MUCHHHH BABYYYYY KOOOO MWAAMWAAAAAAAAAAAAAAAAAAAAAAAA😙😙`;
+    const secretMessage = `🌷 GOOD MORNING POOOO MYYY LOVEYYY AND HAPPYYYYY 5TH MONTHSARRYYY POOO BABYYYY KOOOO. 🌷 MOREEE MONTHSSS AND YEARSS FOR USS TO CELEBRATE SOONNN. I'M SOOO HAPPYYYY TO POO TO REACHHH THE 5TH MONTHHH OF OURRR LOVEEE STORYYYY, 1 MOREEE MONTHH AND HALF A YEARRR NA TAYOOO BABYYY KOOOO. THANKK YOUUUUUUUU SOOOO SOOOOO MUCHHHH SA LAGINGGG PAG-INTINDIII SAKINNN BABYYY KOOO, IK IM NOT THE PERFECT BOYFRIEND BUT I'M DOING MY BESTTT TO BECOMEE ONEEE. SOBRANG NAAPPRECIATEEE KOOO POO YUNGG CHANCES AND TIWALA NA BINIBIGAYYY MOOO SAKINNN PARA MAGING BETTER VERSION AKOO NG SARILII KOOO BABYYY KOOOO. I'M SORRYYYY POOO IF THERE'S NOOO PHYSICAL GIFTSS FOR NOWWW, BABAWIII POO AKOOO PAG MAY ALLOWANCE NA ULITT AKOOO BABYYY KOOOO. LAHATTT POOO NG EFFORTS MOO NAKIKITAA KOOO YANNN BABYYY KOOO AND EVERY SINGLE ONEEE OF THEMM IS SUPERR APPRECIATED POOOO. I HOPEEEE NA HINDIII KA POO MAGSAWAA SA PAG-INTINDIII AT PAGTIWALA SAKINNN BABYYY KOOO, IKK SOMETIMESS NASASAKTAN KOOO POO IKAWW AND MAY MGA MALI AKONG NAGAGAWAA BUT I PROMISEEE POO THAT IT WAS NEVERR MY INTENTION TO HURT YOUUU BABYYY KOOO. FORR ALLL THE LAUGHTER AND SADNESS THAT WE WENT THROUGH I'M THANKFUL DAHILLL NAGING MATATAG IKAWWW BABYYY KOOOO, SANAA GANONN PA RINN POOO IN THE FUTUREEEE. KAHIT ANOOO PONGG OBSTACLE ANG HUMARANG AT PAGDAANAN NATINNN, AS LONG AS MAGKASAMAAAA TAYOOO I'M SUREEE NA MALALAGPASANN NATINN YANNN BABYYYY KOOOO. YOU'RE THEEE BEST THINGG THAT EVER HAPPENED TO MEEE AND YOU'RE AS IMPORTANT AS MY FAMILYYY POOO SA HEART KOOO BABYYY KOOOO. SOBRANGG MAHALLL NA MAHALLLLLL POOO KITAAA BABYYY KOOO AND I HOPE YOU KNOWW NA HINDING-HINDI AKOOO SUSUKO SAYOOOO, SANAA MAGTIWALA KA POOO SAKINNN. BEE MOREEE OPENNN DINN POOO SA BABYYY MOOOO, I PROMISEEEE NA MAS MAGIGING UNDERSTANDING AKOOO AND IINTINDIHINN KOO YUNG NARARAMDAMAN MOO POO BABYYY KOOOO. SOON POOO MAKAKAPUNTAA RINN AKOOO JANNN AND MAKAKASAMA NA KITAA BABYYY KOOOO, KONTING ANTAYY PA POOO AND MAKAKAPUNTA RINN JANN BABYYY MOOOO. HAPPYYYY 5TH MONTHSARRYYY POOO ULITTT BABYYY KOOOO, SANA MAG-ENJOYYY IKAWWWW TODAYYYY. I LOVEEEEEEEEEEEEEEEEE YOUUUUUUUUUUUUUUUUUUUUUUUUUUUUU SOOOOOO SOOOO MUCHHHH BABYYYYY KOOOO MWAAMWAAAAAAAAAAAAAAAAAAAAAAAA😙😙`;
 
     function openLetter() {
         if (quizUnlocked) {
-            dynamicMsg.innerHTML = secretMessage.replace(/\n/g, '<br>');
+            dynamicMsg.innerHTML = secretMessage;
             modal.style.display = 'flex';
         } else alert("🔒 Finish the mini game first! Answer all 5 questions correctly.");
     }
