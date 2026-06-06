@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>For My Love 🌷 | 5th Monthsarry</title>
+    
+    <!-- GOOGLE FONTS - Beautiful fonts added! -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -12,7 +16,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Poppins', 'Quicksand', system-ui, -apple-system, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
             background: linear-gradient(145deg, #7a0010 0%, #b31b2c 100%);
             min-height: 100vh;
             color: #2e0a12;
@@ -23,80 +27,107 @@
             position: fixed;
             left: 0;
             top: 0;
-            width: 250px;
+            width: 280px;
             height: 100vh;
-            background: #5e000c;
-            box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+            background: linear-gradient(180deg, #5e000c 0%, #3e0008 100%);
+            box-shadow: 4px 0 25px rgba(0,0,0,0.4);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 1rem;
             padding: 2rem 1rem;
             z-index: 100;
             border-right: 3px solid #ffb347;
+            overflow-y: auto;
+        }
+
+        /* Tulip images in sidebar */
+        .sidebar-tulip {
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #ffb347;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-tulip:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .sidebar-tulip-top {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-tulip-bottom {
+            margin-top: 0.5rem;
         }
 
         .menu-btn {
             background: #8b1a2c;
             border: none;
             color: #fff0e0;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
             padding: 0.8rem 1rem;
             border-radius: 50px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             width: 100%;
         }
 
         .menu-btn:hover {
             background: #ff4d6d;
-            transform: scale(1.02);
+            transform: scale(1.02) translateX(5px);
             color: white;
         }
 
         /* Music player in sidebar */
         .music-player {
             margin-top: auto;
-            background: #3e0008;
-            border-radius: 1rem;
-            padding: 0.8rem;
+            background: rgba(62, 0, 8, 0.8);
+            border-radius: 1.5rem;
+            padding: 1rem;
             text-align: center;
             color: #ffddcc;
+            width: 100%;
         }
 
         .music-player audio {
             width: 100%;
             border-radius: 30px;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .music-label {
-            font-size: 0.7rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 0.9rem;
             margin-bottom: 5px;
+            color: #ffb347;
         }
 
-        /* Main content - shifted right to make room for sidebar */
+        /* Main content */
         .main-content {
-            margin-left: 250px;
+            margin-left: 280px;
             padding: 2rem 2rem 3rem;
-            max-width: calc(100% - 250px);
+            max-width: calc(100% - 280px);
             position: relative;
             z-index: 2;
         }
 
         body::before {
             content: "🌷";
-            font-size: 180px;
+            font-size: 200px;
             position: fixed;
             bottom: 10px;
             right: 10px;
-            opacity: 0.05;
+            opacity: 0.04;
             pointer-events: none;
             z-index: 0;
         }
@@ -116,6 +147,7 @@
         }
 
         h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
             color: #a51c30;
             border-left: 12px solid #ff6b4a;
@@ -129,19 +161,21 @@
         /* Home page */
         .hero-greeting {
             text-align: center;
-            background: #fff0e6;
+            background: linear-gradient(135deg, #fff0e6, #ffe4d4);
             border-radius: 2rem;
-            padding: 1.5rem;
+            padding: 1.8rem;
             margin-bottom: 2rem;
         }
 
         .hero-greeting h1 {
-            font-size: 2rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
             color: #c02b3e;
         }
 
         .big-love {
-            font-size: 1.6rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #e63946;
             margin: 0.5rem 0;
@@ -150,19 +184,24 @@
         .photo-pair {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             margin: 1.5rem 0;
         }
 
         .photo-pair img {
             width: 45%;
-            min-width: 180px;
+            min-width: 200px;
             border-radius: 2rem;
             border: 4px solid #ffb485;
             object-fit: cover;
             aspect-ratio: 1 / 1;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-pair img:hover {
+            transform: scale(1.02);
         }
 
         /* Memories grid */
@@ -177,8 +216,13 @@
             background: white;
             border-radius: 1.5rem;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-item:hover {
+            transform: translateY(-5px);
         }
 
         .memory-item img {
@@ -188,10 +232,11 @@
         }
 
         .memory-item .caption {
-            padding: 0.5rem;
+            padding: 0.6rem;
             font-size: 0.8rem;
             color: #a51c30;
             font-weight: 500;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Comment section */
@@ -200,6 +245,12 @@
             border-radius: 2rem;
             padding: 1.5rem;
             margin-top: 2rem;
+        }
+
+        .comment-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #a51c30;
         }
 
         .comment-box {
@@ -213,7 +264,7 @@
             padding: 12px;
             border-radius: 1rem;
             border: 1px solid #ffaa88;
-            font-family: inherit;
+            font-family: 'Poppins', sans-serif;
             resize: vertical;
         }
 
@@ -224,7 +275,13 @@
             padding: 10px;
             border-radius: 2rem;
             font-weight: bold;
+            font-family: 'Poppins', sans-serif;
             cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .comment-btn:hover {
+            background: #e63946;
         }
 
         .comments-list {
@@ -242,6 +299,7 @@
             border-radius: 1rem;
             margin-bottom: 0.6rem;
             border-left: 5px solid #ff6b4a;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Quiz & letter */
@@ -258,11 +316,18 @@
             margin-bottom: 1.2rem;
         }
 
+        .quiz-question p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #a1223a;
+        }
+
         .quiz-input {
             width: 100%;
             padding: 10px;
             border-radius: 60px;
             border: 1px solid #ffaa88;
+            font-family: 'Poppins', sans-serif;
         }
 
         .check-answers-btn {
@@ -272,8 +337,14 @@
             padding: 12px;
             border-radius: 40px;
             font-weight: bold;
+            font-family: 'Poppins', sans-serif;
             width: 100%;
             cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .check-answers-btn:hover {
+            background: #e63946;
         }
 
         .quiz-status {
@@ -282,6 +353,7 @@
             background: #ffd9cc;
             padding: 10px;
             border-radius: 60px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .locked-letter {
@@ -290,6 +362,7 @@
             border-radius: 2rem;
             cursor: pointer;
             text-align: center;
+            transition: 0.2s;
         }
 
         .locked-letter.unlocked {
@@ -317,6 +390,7 @@
             padding: 2rem;
             text-align: center;
             border: 8px solid #ffb081;
+            font-family: 'Playfair Display', serif;
         }
 
         .close-modal {
@@ -329,32 +403,48 @@
             text-align: center;
             color: #ffe0d0;
             margin-top: 2rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1rem;
         }
 
-        /* Mobile responsive */
         @media (max-width: 700px) {
             .sidebar {
-                width: 70px;
-                padding: 1rem 0.5rem;
+                width: 90px;
+                padding: 1rem 0.3rem;
             }
             .menu-btn span {
                 display: none;
             }
-            .main-content {
-                margin-left: 70px;
-                max-width: calc(100% - 70px);
-                padding: 1rem;
+            .sidebar-tulip {
+                width: 50px;
             }
             .music-label {
                 display: none;
+            }
+            .main-content {
+                margin-left: 90px;
+                max-width: calc(100% - 90px);
+                padding: 1rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .hero-greeting h1 {
+                font-size: 1.8rem;
+            }
+            .big-love {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- SIDEBAR MENU (vertical on left) -->
+<!-- SIDEBAR MENU with tulip images -->
 <div class="sidebar">
+    <!-- Top tulip image -->
+    <img class="sidebar-tulip sidebar-tulip-top" src="https://imgs.search.brave.com/jqtj7y8VLo26c6HZLdUxTXUXFvqE00-MwRkyXZEGASA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/Ym5haWwuaW1nYmlu/LmNvbS8xMi8xNy8y/MC90dWxpcC1mbG93/ZXItY2FydG9vbi1w/aW5rLXR1bGlwLWZs/b3dlcnMtd2l0aC1n/cmVlbi1sZWF2ZXMt/emc2VnNCeVpfdC5q/cGc" alt="Tulip flower">
+    
     <button class="menu-btn" data-section="home">🌹 <span>Home</span></button>
     <button class="menu-btn" data-section="memories">📸 <span>Memories</span></button>
     <button class="menu-btn" data-section="game">🎮 <span>Mini Game</span></button>
@@ -364,11 +454,13 @@
     <div class="music-player">
         <div class="music-label">🎵 Our Song 🎵</div>
         <audio id="bgMusic" loop controls>
-            <!-- REPLACE THE src WITH YOUR ACTUAL SONG FILE OR URL -->
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
             Your browser does not support audio.
         </audio>
     </div>
+    
+    <!-- Bottom tulip image -->
+    <img class="sidebar-tulip sidebar-tulip-bottom" src="https://imgs.search.brave.com/Ni7O0-hRzChPgbNKJbJgK9OnR5Or6SWDCUmv-ooJkKI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzIyL2I5/LzUyLzIyYjk1MmEw/YzQxNTBkMmJiNWMx/MzIwYjhjMzg1ZDVj/LmpwZw" alt="Tulip bouquet">
 </div>
 
 <!-- MAIN CONTENT -->
@@ -379,10 +471,10 @@
             <h1>HELLOOO MYYY LOVEYYY 🌷</h1>
             <div class="big-love">HAPPY 5TH MONTHSARRY POOO BABYYY KOOO 💖</div>
             <div class="big-love">I LOVEEEEEEEEE YOUUUUUUUUU SOOO SOOO MUCHHHH BABYYY KOOO MWAMWAAAAAAAAAAAA<3</div>
-            <p style="margin-top: 1rem;">✨ THIS WHOLE SITE IS FOR YOU:3 ✨</p>
+            <p style="margin-top: 1rem; font-family: 'Dancing Script', cursive; font-size: 1.3rem;">✨ THIS WHOLE SITE IS FOR YOU:3 ✨</p>
         </div>
         
-        <!-- Insert 2+ pictures of her here -->
+        <!-- Insert 2+ pictures of her here - REPLACE THESE WITH YOUR PHOTO LINKS -->
         <div class="photo-pair">
             <img src="https://placehold.co/400x400/FFB6C1/FFFFFF?text=Your+Photo+1" alt="My Love 1">
             <img src="https://placehold.co/400x400/FFC0CB/FFFFFF?text=Your+Photo+2" alt="My Love 2">
@@ -530,7 +622,7 @@
     document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
     window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
 
-    // ---------- MENU NAVIGATION (sidebar) ----------
+    // ---------- MENU NAVIGATION ----------
     const sections = { home: 'home-section', memories: 'memories-section', game: 'game-section', letter: 'letter-section' };
     document.querySelectorAll('.menu-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -539,11 +631,6 @@
         });
     });
     updateQuiz();
-
-    // ---------- AUTO-PLAY MUSIC (uncomment if you want it to play automatically) ----------
-    // const audio = document.getElementById('bgMusic');
-    // audio.volume = 0.5;
-    // audio.play().catch(e => console.log("Autoplay blocked: user needs to interact first"));
 </script>
 </body>
 </html>
