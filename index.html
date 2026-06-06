@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>For My Love 🌷 | 5th Monthsarry</title>
     
-    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -94,8 +93,10 @@
             color: #ffb347;
         }
 
-        .music-player iframe {
-            border-radius: 12px;
+        audio {
+            width: 100%;
+            border-radius: 30px;
+            margin-top: 5px;
         }
 
         .main-content {
@@ -365,19 +366,34 @@
 
         .modal-content {
             background: #fff9f0;
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
             border-radius: 3rem;
             padding: 2rem;
             text-align: center;
             border: 8px solid #ffb081;
             font-family: 'Playfair Display', serif;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
         .close-modal {
             float: right;
             font-size: 2rem;
             cursor: pointer;
+        }
+
+        .letter-message {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: left;
+            white-space: pre-wrap;
+            color: #4a1f2c;
+            background: #fff0e6;
+            padding: 1rem;
+            border-radius: 2rem;
+            margin-top: 1rem;
         }
 
         footer {
@@ -416,36 +432,45 @@
             .big-love {
                 font-size: 1.2rem;
             }
+            .modal-content {
+                width: 95%;
+                padding: 1rem;
+            }
+            .letter-message {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- SIDEBAR MENU with NEW tulip image -->
 <div class="sidebar">
-    <!-- Top tulip image - REPLACED WITH NEW ONE -->
     <img class="sidebar-tulip sidebar-tulip-top" src="https://imgs.search.brave.com/R5PL_drgqfkHBCLpbEwLy4VNPdnwtbwZHA7aQOlSQk4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2VlL2Fl/L2M5L2VlYWVjOTMy/Y2Y3NjA1NGFjODc5/YTQ2MzQ1YTgwMWYz/LmpwZw" alt="Tulip flower">
     
-    <button class="menu-btn" data-section="home">🌹 <span>Home</span></button>
-    <button class="menu-btn" data-section="memories">📸 <span>Memories</span></button>
-    <button class="menu-btn" data-section="game">🎮 <span>Mini Game</span></button>
-    <button class="menu-btn" data-section="letter">💌 <span>Love Letter</span></button>
+    <button class="menu-btn" data-section="home">Home</button>
+    <button class="menu-btn" data-section="memories">Memories</button>
+    <button class="menu-btn" data-section="game">Mini Game</button>
+    <button class="menu-btn" data-section="letter">Love Letter</button>
     
     <div class="music-player">
         <div class="music-label">🎵 Papahiram - Moira ft. Johnoy 🎵</div>
-        <iframe width="100%" height="65" src="https://www.youtube.com/embed/bxfCwyiKpDg?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 15px;"></iframe>
+        <audio controls>
+            <source src="Moira Dela Torre ft. Johnoy Danao - Papahiram (Lyrics).mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
     </div>
 
     <div class="music-player" style="margin-top: 5px;">
         <div class="music-label">🎵 Padaba Taka - dwta 🎵</div>
-        <iframe width="100%" height="65" src="https://www.youtube.com/embed/4KXI9yYKex0?controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 15px;"></iframe>
+        <audio controls>
+            <source src="dwta - Padaba Taka (Lyric Video with Tagalog Translation).mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
     </div>
     
-    <!-- Bottom tulip image -->
     <img class="sidebar-tulip sidebar-tulip-bottom" src="https://imgs.search.brave.com/Ni7O0-hRzChPgbNKJbJgK9OnR5Or6SWDCUmv-ooJkKI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzIyL2I5/LzUyLzIyYjk1MmEw/YzQxNTBkMmJiNWMx/MzIwYjhjMzg1ZDVj/LmpwZw" alt="Tulip bouquet">
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="main-content">
     <div id="home-section" class="section">
         <div class="hero-greeting">
@@ -472,9 +497,7 @@
                 <textarea id="commentInput" class="comment-input" rows="2" placeholder="Write something lovely... 💌"></textarea>
                 <button id="postCommentBtn" class="comment-btn">🌸 Post Comment 🌸</button>
             </div>
-            <div class="comments-list" id="commentsList">
-                <div class="single-comment">💕 This site is so cute! Love you baby! - 🥰</div>
-            </div>
+            <div class="comments-list" id="commentsList"></div>
         </div>
     </div>
 
@@ -483,7 +506,7 @@
         <div class="quiz-area">
             <div class="quiz-question">
                 <p>🌹 1. WHAT IS MYYYY BABYYY'S FAVORITE COLOR?</p>
-                <input type="text" id="q1" class="quiz-input" placeholder="Your answer...">
+                <input type="text" id="q1" class="quiz-input" placeholder="e.g., Blue, Pink, Red...">
                 <div id="q1-feedback" class="quiz-feedback"></div>
             </div>
             <div class="quiz-question">
@@ -493,11 +516,21 @@
             </div>
             <div class="quiz-question">
                 <p>🍽️ 3. DO YOU PREFER SALTY OR SWEET FOOD?</p>
-                <input type="text" id="q3" class="quiz-input" placeholder="salty or sweet?">
+                <input type="text" id="q3" class="quiz-input" placeholder="e.g., Salty, Sweet, Both...">
                 <div id="q3-feedback" class="quiz-feedback"></div>
             </div>
+            <div class="quiz-question">
+                <p>🌷 4. WHAT IS HER FAVORITE FLOWER?</p>
+                <input type="text" id="q4" class="quiz-input" placeholder="e.g., Rose, Tulips, Sunflower...">
+                <div id="q4-feedback" class="quiz-feedback"></div>
+            </div>
+            <div class="quiz-question">
+                <p>🍵 5. WHAT IS HER FAVORITE FLAVOR DRINK?</p>
+                <input type="text" id="q5" class="quiz-input" placeholder="e.g., Vanilla, Matcha, Chocolate...">
+                <div id="q5-feedback" class="quiz-feedback"></div>
+            </div>
             <button class="check-answers-btn" id="checkQuizBtn">🌸 Check Answers & Unlock Letter 🌸</button>
-            <div id="quizStatus" class="quiz-status">💌 Answer all correctly to unlock the secret letter!</div>
+            <div id="quizStatus" class="quiz-status">💌 Answer all 5 correctly to unlock the secret letter!</div>
         </div>
     </div>
 
@@ -515,9 +548,9 @@
 <div id="letterModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <span>🌷🌹🌷</span>
+        <span style="font-size: 2rem;">🌷🌹🌷</span>
         <div class="letter-message" id="dynamicLetterMessage"></div>
-        <span>❤️🌷❤️</span>
+        <span style="font-size: 2rem;">❤️🌷❤️</span>
     </div>
 </div>
 
@@ -555,6 +588,7 @@
     const commentInput = document.getElementById('commentInput');
     const postBtn = document.getElementById('postCommentBtn');
     const commentsList = document.getElementById('commentsList');
+    commentsList.innerHTML = '';
 
     function addComment(text) {
         if (text.trim() === "") return;
@@ -569,7 +603,14 @@
     postBtn.addEventListener('click', () => addComment(commentInput.value));
     commentInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') addComment(commentInput.value); });
 
-    const CORRECT_ANSWERS = { q1: "RED", q2: "JANUARY 6 2026", q3: "SALTY FOOD" };
+    const CORRECT_ANSWERS = { 
+        q1: "RED", 
+        q2: "JANUARY 6 2026", 
+        q3: "SALTY FOOD",
+        q4: "TULIPS",
+        q5: "MATCHA"
+    };
+    
     function normalizeAnswer(str) {
         let s = str.trim().toUpperCase().replace(/,/g, '').replace(/\s+/g, ' ');
         if (s.includes("JANUARY 6") && s.includes("2026")) return "JANUARY 6 2026";
@@ -578,35 +619,79 @@
 
     let quizUnlocked = false;
     const q1 = document.getElementById('q1'), q2 = document.getElementById('q2'), q3 = document.getElementById('q3');
+    const q4 = document.getElementById('q4'), q5 = document.getElementById('q5');
     const q1fb = document.getElementById('q1-feedback'), q2fb = document.getElementById('q2-feedback'), q3fb = document.getElementById('q3-feedback');
+    const q4fb = document.getElementById('q4-feedback'), q5fb = document.getElementById('q5-feedback');
     const quizStatus = document.getElementById('quizStatus');
     const lockedBox = document.getElementById('lockedLetterBox');
 
     function updateQuiz() {
         const a1 = normalizeAnswer(q1.value), a2 = normalizeAnswer(q2.value), a3 = normalizeAnswer(q3.value);
+        const a4 = normalizeAnswer(q4.value), a5 = normalizeAnswer(q5.value);
         const c1 = a1 === CORRECT_ANSWERS.q1, c2 = a2 === CORRECT_ANSWERS.q2, c3 = a3 === CORRECT_ANSWERS.q3;
-        q1fb.innerText = c1 ? "✅" : (q1.value ? "❌ RED" : "");
-        q2fb.innerText = c2 ? "✅ Jan 6 2026" : (q2.value ? "❌ January 6 2026" : "");
-        q3fb.innerText = c3 ? "✅ Salty!" : (q3.value ? "❌ Salty food" : "");
-        if (c1 && c2 && c3 && !quizUnlocked) {
+        const c4 = a4 === CORRECT_ANSWERS.q4, c5 = a5 === CORRECT_ANSWERS.q5;
+        
+        q1fb.innerText = c1 ? "✅ Correct!" : (q1.value ? "❌ Try RED" : "");
+        q2fb.innerText = c2 ? "✅ Correct! January 6, 2026 ❤️" : (q2.value ? "❌ Try: January 6 2026" : "");
+        q3fb.innerText = c3 ? "✅ Correct! Salty food it is! 🧂" : (q3.value ? "❌ Baby prefers salty!" : "");
+        q4fb.innerText = c4 ? "✅ Correct! Tulips! 🌷" : (q4.value ? "❌ Her favorite is TULIPS 🌷" : "");
+        q5fb.innerText = c5 ? "✅ Correct! Matcha! 🍵" : (q5.value ? "❌ Her favorite is MATCHA" : "");
+        
+        const allCorrect = c1 && c2 && c3 && c4 && c5;
+        if (allCorrect && !quizUnlocked) {
             quizUnlocked = true;
-            quizStatus.innerHTML = "🎉 UNLOCKED! Go to Love Letter 🎉";
+            quizStatus.innerHTML = "🎉✨ PERFECT! You unlocked the LOVE LETTER! ✨🎉<br> Go to Love Letter section and click the envelope 🌷";
+            quizStatus.style.background = "#c9f0c4";
             lockedBox.classList.add('unlocked');
             lockedBox.innerHTML = `<div>💌 CLICK TO OPEN YOUR LETTER 💌</div>`;
+        } else if (allCorrect && quizUnlocked) {
+            quizStatus.innerHTML = "✨ Letter already unlocked! Check Love Letter section ✨";
+        } else {
+            quizStatus.innerHTML = "💬 Answer all 5 questions correctly to unlock the secret letter 💬";
+            if(!quizUnlocked) quizStatus.style.background = "#ffd9cc";
         }
     }
+    
     document.getElementById('checkQuizBtn').addEventListener('click', updateQuiz);
-    [q1, q2, q3].forEach(i => i.addEventListener('input', updateQuiz));
+    [q1, q2, q3, q4, q5].forEach(i => i.addEventListener('input', updateQuiz));
 
     const modal = document.getElementById('letterModal');
     const dynamicMsg = document.getElementById('dynamicLetterMessage');
-    const secretMessage = `🌷 My baby, 🌷<br><br>Happy 5th Monthsarry! I love you more than tulips love the sun. You make my world bright and red like passion. Thank you for saying YES on January 6, 2026. Every day with you is a gift. 💕<br><br>I LOVE YOU SO MUCH BABYYY KOOO MWAMWA ❤️🌷<br><br>Yours forever,<br>[Your Name]`;
+    const secretMessage = `🌷 GOOD MORNING POOOO MYYY LOVEYYY AND HAPPYYYYY 5TH MONTHSARRYYY POOO BABYYYY KOOOO. 🌷
+
+MOREEE MONTHSSS AND YEARSS FOR USS TO CELEBRATE SOONNN. I'M SOOO HAPPYYYY TO POO TO REACHHH THE 5TH MONTHHH OF OURRR LOVEEE STORYYYY, 1 MOREEE MONTHH AND HALF A YEARRR NA TAYOOO BABYYY KOOOO.
+
+THANKK YOUUUUUUUU SOOOO SOOOOO MUCHHHH SA LAGINGGG PAG-INTINDIII SAKINNN BABYYY KOOO, IK IM NOT THE PERFECT BOYFRIEND BUT I'M DOING MY BESTTT TO BECOMEE ONEEE.
+
+SOBRANG NAAPPRECIATEEE KOOO POO YUNGG CHANCES AND TIWALA NA BINIBIGAYYY MOOO SAKINNN PARA MAGING BETTER VERSION AKOO NG SARILII KOOO BABYYY KOOOO.
+
+I'M SORRYYYY POOO IF THERE'S NOOO PHYSICAL GIFTSS FOR NOWWW, BABAWIII POO AKOOO PAG MAY ALLOWANCE NA ULITT AKOOO BABYYY KOOOO.
+
+LAHATTT POOO NG EFFORTS MOO NAKIKITAA KOOO YANNN BABYYY KOOO AND EVERY SINGLE ONEEE OF THEMM IS SUPERR APPRECIATED POOOO.
+
+I HOPEEEE NA HINDIII KA POO MAGSAWAA SA PAG-INTINDIII AT PAGTIWALA SAKINNN BABYYY KOOO, IKK SOMETIMESS NASASAKTAN KOOO POO IKAWW AND MAY MGA MALI AKONG NAGAGAWAA BUT I PROMISEEE POO THAT IT WAS NEVERR MY INTENTION TO HURT YOUUU BABYYY KOOO.
+
+FORR ALLL THE LAUGHTER AND SADNESS THAT WE WENT THROUGH I'M THANKFUL DAHILLL NAGING MATATAG IKAWWW BABYYY KOOOO, SANAA GANONN PA RINN POOO IN THE FUTUREEEE.
+
+KAHIT ANOOO PONGG OBSTACLE ANG HUMARANG AT PAGDAANAN NATINNN, AS LONG AS MAGKASAMAAAA TAYOOO I'M SUREEE NA MALALAGPASANN NATINN YANNN BABYYYY KOOOO.
+
+YOU'RE THEEE BEST THINGG THAT EVER HAPPENED TO MEEE AND YOU'RE AS IMPORTANT AS MY FAMILYYY POOO SA HEART KOOO BABYYY KOOOO.
+
+SOBRANGG MAHALLL NA MAHALLLLLL POOO KITAAA BABYYY KOOO AND I HOPE YOU KNOWW NA HINDING-HINDI AKOOO SUSUKO SAYOOOO, SANAA MAGTIWALA KA POOO SAKINNN.
+
+BEE MOREEE OPENNN DINN POOO SA BABYYY MOOOO, I PROMISEEEE NA MAS MAGIGING UNDERSTANDING AKOOO AND IINTINDIHINN KOO YUNG NARARAMDAMAN MOO POO BABYYY KOOOO.
+
+SOON POOO MAKAKAPUNTAA RINN AKOOO JANNN AND MAKAKASAMA NA KITAA BABYYY KOOOO, KONTING ANTAYY PA POOO AND MAKAKAPUNTA RINN JANN BABYYY MOOOO.
+
+HAPPYYYY 5TH MONTHSARRYYY POOO ULITTT BABYYY KOOOO, SANA MAG-ENJOYYY IKAWWWW TODAYYYY.
+
+I LOVEEEEEEEEEEEEEEEEE YOUUUUUUUUUUUUUUUUUUUUUUUUUUUUU SOOOOOO SOOOO MUCHHHH BABYYYYY KOOOO MWAAMWAAAAAAAAAAAAAAAAAAAAAAAA😙😙`;
 
     function openLetter() {
         if (quizUnlocked) {
-            dynamicMsg.innerHTML = secretMessage;
+            dynamicMsg.innerHTML = secretMessage.replace(/\n/g, '<br>');
             modal.style.display = 'flex';
-        } else alert("🔒 Finish the mini game first!");
+        } else alert("🔒 Finish the mini game first! Answer all 5 questions correctly.");
     }
     lockedBox.addEventListener('click', openLetter);
     document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
